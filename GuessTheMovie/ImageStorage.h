@@ -41,9 +41,9 @@ struct ImageStorage
 	// TODO: implement this function
 	void create_folder(const std::string& path) 
 	{
-		std::cout << "Creating folder at " << path;
+        std::cout << "Creating folder at " << path << std::endl;
 
-		std::cout << "Finished creating folder at " << path;
+        std::cout << "Finished creating folder at " << path << std::endl;
 	}
 	// TODO: implement this function
 	bool does_folder_exist(const std::string& path) { return false; }
