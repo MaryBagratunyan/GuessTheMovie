@@ -146,6 +146,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Downloader.h" />
+    <ClInclude Include="ImageSearchAlgorithm.h" />
+    <ClInclude Include="ImageSearcher.h" />
+    <ClInclude Include="Link.h" />
+    <ClInclude Include="SuggestionGenerator.h" />
     <ClInclude Include="FilmToImageAlgorithm.h" />
     <ClInclude Include="Image.h" />
     <ClInclude Include="ImageDisplayer.h" />
