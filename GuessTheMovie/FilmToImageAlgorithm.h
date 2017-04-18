@@ -1,16 +1,15 @@
 #pragma once
 #include <vector>
 
-#include "ImageStorage.h"
+#include "ImageSearchAlgorithm.h"
 #include "Image.h"
 
 struct FilmToImageAlgorithm
 {
-	FilmToImageAlgorithm(): storage(ImageStorage()) {}
-
 	Image process_film_name(const std::string& film_name)
 	{
-		std::vector<Image> im = storage.get_images_by_film_name(film_name);
+		ImageSearchAlgorithm searcher(film_name);
+		std::vector<Image> im = searcher.get_images();
 		return combine_images(im);
 	}
 
@@ -19,7 +18,4 @@ struct FilmToImageAlgorithm
 	{
 		return images[0];  // this is a dummy, dude, be careful!
 	}
-
-	ImageStorage storage;
-
 };

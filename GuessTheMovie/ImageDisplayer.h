@@ -8,6 +8,6 @@ struct ImageDisplayer
 	// TODO: improve this!
 	void show(const Image& image)
 	{
-		std::cout << image.path_to_pic;
+		std::cout << image.path_to_pic << std::endl;
 	}
 };

@@ -27,3 +27,11 @@
 *.exe
 *.out
 *.app
+
+# Visual Studio specifics
+*.db
+*.suo
+*.tlog
+*.idb
+*.pdb
+*.ilk

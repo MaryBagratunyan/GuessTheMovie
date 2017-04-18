@@ -146,10 +146,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Downloader.h" />
     <ClInclude Include="FilmToImageAlgorithm.h" />
     <ClInclude Include="Image.h" />
     <ClInclude Include="ImageDisplayer.h" />
+    <ClInclude Include="ImageSearchAlgorithm.h" />
+    <ClInclude Include="ImageSearcher.h" />
     <ClInclude Include="ImageStorage.h" />
+    <ClInclude Include="SuggestionGenerator.h" />
     <ClInclude Include="Utils.h" />
   </ItemGroup>
   <ItemGroup>

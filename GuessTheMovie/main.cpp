@@ -2,6 +2,7 @@
 #include <string>
 #include "FilmToImageAlgorithm.h"
 #include "ImageDisplayer.h"
+#include "ImageSearchAlgorithm.h"
 
 
 int main()
@@ -11,6 +12,8 @@ int main()
 
 	std::string film_name;
 	std::cin >> film_name;
+
+
 
 	FilmToImageAlgorithm algorithm;
 
