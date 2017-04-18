@@ -1,8 +1,12 @@
 #pragma once
 #include <iostream>
+#include <fstream>
 #include <vector>
+#include <string>
 #include "Image.h"
 #include "Utils.h"
+
+
 
 Image dummy_image()
 {
@@ -13,7 +17,7 @@ struct ImageStorage
 {
 	// TODO: here we should check that folder /storage exists, otherwise
 	// we should create it!
-	ImageStorage() 
+	ImageStorage()
 	{
 		path_base = "storage/";
 	}
@@ -29,21 +33,24 @@ struct ImageStorage
 		{
 			create_folder(film_folder_path);
 		}
-		
+
 		if (is_folder_empty(film_folder_path))
 		{
 			create_missing_images(film_name, film_folder_path);
 		}
-		
+
 		return get_folder_contents(film_folder_path);
 	}
 
 	// TODO: implement this function
-	void create_folder(const std::string& path) 
+	void create_folder(const std::string& path)
 	{
-        std::cout << "Creating folder at " << path << std::endl;
-
-        std::cout << "Finished creating folder at " << path << std::endl;
+		std::cout << "Creating folder at " << path << std::endl;
+		// std::ofstream fout(path)
+		// I create in GuessTheMovie file new file ImageStorage
+		std::ofstream fout("ImageStorage\\film_folder.txt");
+		// TODO: i think that we must definite << for Image_type
+		std::cout << "Finished creating folder at " << path << std::endl;
 	}
 	// TODO: implement this function
 	bool does_folder_exist(const std::string& path) { return false; }
@@ -58,8 +65,14 @@ struct ImageStorage
 	}
 
 	// TODO: implement this function
-	void create_missing_images(const Film& film_name, const std::string& path_to_save) 
-	{}
+	void create_missing_images(const Film& film_name, const std::string& path_to_save)
+	{
+		std::vector<Image> missing_images;
+		for (int i = 0; i < 4; ++i)
+		{
+			missing_images.push_back(dummy_image());
+		}
+	}
 
 	std::vector<Image> get_folder_contents(const std::string& path)
 	{
