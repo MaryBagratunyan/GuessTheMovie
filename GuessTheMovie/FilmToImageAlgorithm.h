@@ -16,6 +16,12 @@ struct FilmToImageAlgorithm
 	// TODO: do some smart stuff here
 	Image combine_images(const std::vector<Image>& images)
 	{
-		return images[0];  // this is a dummy, dude, be careful!
+		if (!images.empty())
+		{
+			auto it = images.begin();
+			return *it;  // this is a dummy, dude, be careful!
+		}
+		else
+			return "Don't believe aliens.You didn't download image";
 	}
 };

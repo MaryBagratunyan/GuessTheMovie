@@ -44,7 +44,7 @@ struct ImageStorage
 		return path_base + film_name;
 	}
 
-	std::vector<Image> get_folder_images(const std::string& path)
+	/*std::vector<Image> get_folder_images(const std::string& path)
 	{
 		// This is a dummy content for testing purposes
 		std::vector<Image> images;
@@ -53,7 +53,23 @@ struct ImageStorage
 			images.push_back(dummy_image());
 		}
 		return images;
-	}
+	}*/
+	std::vector<Image> get_folder_images(const std::string& path)
+	{
+		
+		std::vector<Image> image_vector;
+		boost::filesystem::directory_iterator it(path);
+		while (it != boost::filesystem::directory_iterator())
+		{
+			if ((it->path().extension() == ".jpg") || (it->path().extension() == ".jpeg") 
+				|| (it->path().extension() == ".png") || (it->path().extension() == ".gif")
+				|| (it->path().extension() ==".JPG")||(it->path().extension() == ".JPEG")
+				|| (it->path().extension() ==".PNG")||((it->path().extension() == ".GIF")))
+				image_vector.push_back(it->path().string());
+			++it;
+		}
 
+		return image_vector;
+	}
 	std::string path_base;
 };
