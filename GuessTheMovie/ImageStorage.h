@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <vector>
+#include <boost\filesystem.hpp>
 #include "Image.h"
 #include "Utils.h"
 
@@ -22,14 +23,20 @@ struct ImageStorage
 	void create_folder(const std::string& path) 
 	{
         std::cout << "Creating folder at " << path << std::endl;
-
-        std::cout << "Finished creating folder at " << path << std::endl;
+		if (boost::filesystem::create_directories(path))
+		 std::cout << "Finished creating folder at " << path << std::endl;
 	}
 	// TODO: implement this function
-	bool does_folder_exist(const std::string& path) { return false; }
+	bool does_folder_exist(const std::string& path)
+	{
+		return boost::filesystem::exists(path);	
+	}
 
 	// TODO: implement this function
-	bool is_folder_empty(const std::string& path) { return true; }
+	bool is_folder_empty(const std::string& path)
+	{
+		return boost::filesystem::is_empty(path);
+	}
 
 	// TODO: check this function for complex film names
 	std::string get_film_folder_path(const Film& film_name)
