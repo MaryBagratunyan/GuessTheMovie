@@ -11,7 +11,7 @@ int main()
 
 
 	std::string film_name;
-	std::cin >> film_name;
+	std::getline(std::cin, film_name);
 
 
 
