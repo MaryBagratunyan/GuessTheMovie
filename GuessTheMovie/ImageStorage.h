@@ -5,10 +5,7 @@
 #include "Image.h"
 #include "Utils.h"
 
-Image dummy_image()
-{
-	return Image("Hello World");
-}
+
 
 struct ImageStorage
 {
@@ -56,16 +53,18 @@ struct ImageStorage
 	}*/
 	std::vector<Image> get_folder_images(const std::string& path)
 	{
-		
+
 		std::vector<Image> image_vector;
 		boost::filesystem::directory_iterator it(path);
+		const std::vector<std::string> image_extensions = { ".jpg", ".JPG", ".png",".PNG",".gif",".GIF" };
 		while (it != boost::filesystem::directory_iterator())
 		{
-			if ((it->path().extension() == ".jpg") || (it->path().extension() == ".jpeg") 
-				|| (it->path().extension() == ".png") || (it->path().extension() == ".gif")
-				|| (it->path().extension() ==".JPG")||(it->path().extension() == ".JPEG")
-				|| (it->path().extension() ==".PNG")||((it->path().extension() == ".GIF")))
-				image_vector.push_back(it->path().string());
+			for (int i = 0; i < image_extensions.size(); ++i)
+			{
+				if (it->path().extension() == image_extensions[i])
+					image_vector.push_back(it->path().string());
+
+			}
 			++it;
 		}
 

@@ -18,8 +18,8 @@ struct FilmToImageAlgorithm
 	{
 		if (!images.empty())
 		{
-			auto it = images.begin();
-			return *it;  // this is a dummy, dude, be careful!
+			
+			return images[0]; // this is a dummy, dude, be careful!
 		}
 		else
 			return "Don't believe aliens.You didn't download image";
