@@ -9,21 +9,6 @@
 
 #include "Utils.h"
 
-std::vector<std::string> split_the_string(const std::string& s)
-{
-	std::vector<std::string> words;
-	std::istringstream iss(s);
-
-	while (iss)
-	{
-		std::string substr;
-		iss >> substr;
-		words.push_back(substr);
-	}
-	
-	return words;
-}
-
 bool is_word_not_linking(const std::string& s)
 {
 	// TODO: make this function into a function (struct with operator ())
@@ -35,6 +20,7 @@ bool is_word_not_linking(const std::string& s)
 	return std::find(linking_words.begin(), linking_words.end(), s) == linking_words.end();
 }
 
+// This struct is not needed yet
 struct SuggestionGenerator
 {
 

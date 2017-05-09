@@ -42,6 +42,21 @@
     <ClInclude Include="ImageSearchAlgorithm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CurlInit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GetImageURLFromText.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GetSiteURLFromText.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RandomFourImages.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SendHttpRequest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">

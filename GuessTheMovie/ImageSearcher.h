@@ -1,26 +1,51 @@
 #pragma once
 
 #include <vector>
+
+#include "SendHttpRequest.h"
+#include "GetSiteURLFromText.h"
+#include "GetImageURLFromText.h"
+#include "RandomFourImages.h"
 #include "Utils.h"
+#include "ImageStorage.h"
 
 
+// As the initial version of the project will get Image URLs from
+// one site, instead of searching for generated suggestions, I am going to
+// make some temporary changes in ImageSearcher's struct
 struct ImageSearcher
 {
-	// TODO: find out how to make searches programmatically
-	//and improve the search_for function
-	Link search_for(std::string what)
+	Link search_for(const Film& film)
 	{
-		Link dummylink("https://amazingslider.com/wp-content/uploads/2012/12/dandelion.jpg");
-		return dummylink;
+		ImageStorage image_storage;
+		std::string path = image_storage.get_film_folder_path(film);
+
+		SendHttpRequest send_request;
+		send_request.search_for_movie(film, path);
+
+		GetSiteURLFromText get_url;
+
+		return Link(get_url.extract_site_link(path));
 	}
-	std::vector<Link> total_search_result(const std::vector<std::string>& suggestions)
+	
+	std::vector<Link> total_search_result(const Film& film)
 	{
-		std::vector<Link> linklist;
-		for (int i = 0; i < suggestions.size(); ++i)
-		{
-			ImageSearcher searcher;
-			linklist.push_back(searcher.search_for(suggestions[i])); 
-		}
+		Link link = search_for(film);
+
+		ImageStorage image_storage;
+		std::string path = image_storage.get_film_folder_path(film);
+
+		GetSiteURLFromText get_site_url;
+		Link gallery_link(get_site_url.site_gallery_link(link));
+
+		SendHttpRequest send_request;
+		send_request.search_for_images(gallery_link, path);
+
+		GetImageURLFromText get_url;
+		std::vector<Link> all_links = get_url.extract_image_url(path);
+
+		RandomFourImages random_images;
+		std::vector<Link> linklist = random_images.random_four_images(all_links);
 
 		return linklist;
 	}
