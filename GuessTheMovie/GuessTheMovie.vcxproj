@@ -97,7 +97,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>curllib.lib;libboost_filesystem-vc140-mt-gd-1_63.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>curllib.lib;libboost_filesystem-vc140-mt-gd-1_63.lib;allegro-5.0.10-monolith-md-debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
