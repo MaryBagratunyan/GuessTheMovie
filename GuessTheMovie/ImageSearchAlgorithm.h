@@ -11,11 +11,6 @@ struct ImageSearchAlgorithm
 {
 	ImageSearchAlgorithm(const Film& film_name) : film_name(film_name) {}
 
-
-	// TODO: this should work as follows:
-	// check if the folder /storage/film_name exists
-	// if it exists, then return its contents
-	// otherwise create it and use something to generate them
 	std::vector<Image> get_images()
 	{
 		const std::string film_folder_path = storage.get_film_folder_path(film_name);
@@ -32,14 +27,12 @@ struct ImageSearchAlgorithm
 		return storage.get_folder_images(film_folder_path);
 	}
 
-	// TODO: implement this function
 	void create_missing_images()
 	{
 		std::string path_to_save = storage.get_film_folder_path(this->film_name);
-		SuggestionGenerator sug;
-		std::vector<std::string> suggestions = sug.generate(this->film_name);
+
 		ImageSearcher searcher;
-		std::vector<Link> links = searcher.total_search_result(suggestions);
+		std::vector<Link> links = searcher.total_search_result(film_name);
 
 		Downloader downloader;
 		downloader.download(links, path_to_save);

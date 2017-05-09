@@ -1,0 +1,12 @@
+﻿  main.cpp
+c:\users\bagrat\documents\visual studio 2015\projects\guessthemovie\guessthemovie\utils.h(37): warning C4018: '<': signed/unsigned mismatch
+c:\users\bagrat\documents\visual studio 2015\projects\guessthemovie\guessthemovie\getsiteurlfromtext.h(24): warning C4018: '<': signed/unsigned mismatch
+c:\users\bagrat\documents\visual studio 2015\projects\guessthemovie\guessthemovie\getimageurlfromtext.h(24): warning C4018: '<': signed/unsigned mismatch
+c:\users\bagrat\documents\visual studio 2015\projects\guessthemovie\guessthemovie\getimageurlfromtext.h(90): warning C4018: '<': signed/unsigned mismatch
+c:\users\bagrat\documents\visual studio 2015\projects\guessthemovie\guessthemovie\imagestorage.h(41): warning C4018: '<': signed/unsigned mismatch
+c:\users\bagrat\documents\visual studio 2015\projects\guessthemovie\guessthemovie\imagestorage.h(62): warning C4018: '<': signed/unsigned mismatch
+c:\users\bagrat\documents\visual studio 2015\projects\guessthemovie\guessthemovie\downloader.h(35): warning C4018: '<': signed/unsigned mismatch
+c:\users\bagrat\documents\visual studio 2015\projects\guessthemovie\guessthemovie\getimageurlfromtext.h(111): warning C4715: 'GetImageURLFromText::extract_image_url': not all control paths return a value
+c:\users\bagrat\documents\visual studio 2015\projects\guessthemovie\guessthemovie\getsiteurlfromtext.h(42): warning C4715: 'GetSiteURLFromText::extract_site_link': not all control paths return a value
+  GuessTheMovie.vcxproj -> C:\Users\Bagrat\Documents\Visual Studio 2015\Projects\GuessTheMovie\Debug\GuessTheMovie.exe
+  GuessTheMovie.vcxproj -> C:\Users\Bagrat\Documents\Visual Studio 2015\Projects\GuessTheMovie\Debug\GuessTheMovie.pdb (Full PDB)
